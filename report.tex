@@ -5,27 +5,48 @@
 \usepackage[russian]{babel}
 \usepackage[utf8]{inputenc}
 \usepackage[pdftex]{graphicx}
+\usepackage{calc}
 
-%\usepackage[margin=2cm]{geometry}
+\usepackage[margin=2cm]{geometry}
 
-\hoffset=-1in \textwidth = 18cm \oddsidemargin = 1.5cm 
-\topmargin = -3cm \textheight = 27cm
+% \hoffset=-1in \textwidth = 18cm \oddsidemargin = 1.5cm 
+% \topmargin = -3cm \textheight = 27cm
 
 \newcounter{notask}
 \setcounter{notask}{1}
+
 %Task without picture
 \newcommand{\task}[1]{
-\hbox to \hsize{%
-\vrule{\parbox[t]{0.5cm}{\smallskip \centering\arabic{notask}}} \vrule{\hspace{0.1cm} \parbox[t]{17cm}{\smallskip #1 \smallskip}} \vrule{}%
+  \vrule{
+    \parbox[t]{0.02\textwidth}{\smallskip \centering\arabic{notask}}
+  }
+  \vrule{
+    \parbox[t]{0.92\textwidth}{\smallskip #1 \smallskip}
+  }
+  \hfill
+  \vrule{}
+  \hrule 
+  \addtocounter{notask}{1}
 }
-\hrule \addtocounter{notask}{1}
-}
+
 %Task with picture
 \newcommand{\taskpic}[2]{
-\hbox to \hsize{%
-\vrule{\parbox[t]{0.51cm}{\smallskip \centering\arabic{notask}}} \vrule{\hspace{0.1cm} \parbox[t]{11.6cm}{\smallskip #1 \smallskip}} \vrule{} \hspace{0.1cm} \parbox[t]{4.5cm}{\begin{center} #2 \end{center}}\hspace{0.5cm} \vrule{}%
-}
-\hrule \addtocounter{notask}{1}
+  \vrule{
+    \parbox[t]{0.02\textwidth}{\smallskip \centering\arabic{notask}}
+  }
+  \vrule{
+    \parbox[t]{0.92\textwidth-4.5cm}{\smallskip #1 \smallskip}
+  }
+  \vrule{
+    \parbox[t]{4cm}{\smallskip \begin{center}
+        #2
+      \end{center}
+    }
+  }
+  \hfill
+  \vrule{}
+  \hrule 
+  \addtocounter{notask}{1}
 }
 
 \newcommand{\unit}[1]{\text{ #1}}
@@ -537,6 +558,8 @@
 
 Ниже приводятся задачи, выдававшиеся на физбоях. 
 
+\newgeometry{top=1cm,bottom=1cm,left=1.5cm,right=1.5cm}
+
 \include{./10/battle/semifinal/fb10_semifinal}
 
 \include{./10/battle/final/fb10_final}
@@ -545,6 +568,7 @@
 
 \include{./11/battle/final/fb11_final}
 
+\restoregeometry
 \subsection{<<Большая Задача>>.}
 \label{sec:bz}
 
@@ -565,7 +589,5 @@
 того, после ужина проходили матчи чемпионата по футболу, поскольку
 именно в это время суток температура воздуха становилась приемлимой
 для игры в футбол.
-
-
 
 \end{document}
