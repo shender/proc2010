@@ -10,24 +10,21 @@
 \usetikzlibrary{arrows}
 \usetikzlibrary{decorations.pathmorphing}
 \usetikzlibrary{calc}
+\usetikzlibrary{shadows}
 \usepackage[margin=2cm]{geometry}
 
 \newcounter{notask}
 \setcounter{notask}{1}
-\newbox\taskbox
-\newbox\pictbox
-\newlength{\taskheight}
-\newlength{\pictheight}
 
 %Task without picture
 \newcommand{\task}[1]{
   \hrule
   \hbox to \textwidth {%
     \vrule
-    \parbox[t]{0.04\textwidth}{\smallskip \centering \arabic{notask}}
-    \vrule
-    \hfil
-    \parbox[t]{0.93\textwidth}{\smallskip #1 \smallskip}
+    \parbox[t]{0.04\textwidth}{\smallskip \centering \arabic{notask}}%
+    \vrule%
+    \hfill%
+    \parbox[t]{0.93\textwidth}{\smallskip #1 \smallskip}\hfill%
     \vrule
   }
   \hrule
@@ -35,22 +32,29 @@
   \pagebreak[2]
 }
 
+\newlength{\h}
+\newsavebox{\taskbox}
+\newlength{\x}
+\newsavebox{\pictbox}
+
 %Task with picture
 \newcommand{\taskpic}[2]{
+  \savebox{\taskbox}{\parbox[t]{0.93\textwidth-4.3cm}{\smallskip #1 \smallskip}}
+  \savebox{\pictbox}{\parbox[t]{4cm}{\smallskip \centering
+      \vspace{0pt} #2 \smallskip}}
+  \h=\ht\taskbox
+  \advance\h\dp\taskbox
+  \x=\ht\pictbox
+  \advance\x\dp\pictbox
   \hrule
   \hbox to \textwidth {%
-    \vrule
-    \parbox[t]{0.04\textwidth}{\smallskip \centering \arabic{notask} }
-    \vrule
-    \hfil
-    \parbox[t]{0.93\textwidth-4.3cm}{\smallskip #1 \smallskip}
-    \vrule
-    \hfil
-    \parbox[t]{4cm}{\smallskip \centering \vspace{0pt} #2 \smallskip}
-    \hfil
-    \vrule
+    \vrule\parbox[t][\maxof{\h}{\x}][t]{0.04\textwidth}{ \smallskip
+      \centering \arabic{notask} }\vrule%
+    \hfill\parbox[t][\maxof{\h}{\x}][t]{0.93\textwidth-4.3cm}{\smallskip #1
+        \smallskip}\hfill\vrule%
+    \hfill\parbox[t][\maxof{\h}{\x}][c]{4cm}{\hfil #2 \hfil}\hfill\vrule
   }
-  \hrule 
+  \hrule
   \addtocounter{notask}{1}
   \pagebreak[2]
 }
@@ -707,6 +711,20 @@
   узла. Примеры групп.
 
 \item Психология. \\ \textsf{Преподаватель: Н.В.\,Тараканов}. 
+
+  Физиологическая основа мотивации. Гомеостаз и потребности,
+  неспецифическая активизационная система. Возникновение
+  мотива. Основные механизмы формирования мотивов. Отрыв мотивов от
+  потребностей, неспецифическая тормозная система. Сознательное и
+  бессознательное, проблема осознания мотивов. Классификация мотивов
+  по А.М.Зимичеву. Индивидные мотивы: витальные, безопасности,
+  сексуальные, сохранения вида. Социально--биологические мотивы:
+  парное доминирование, генеральное доминирование, иерархическое
+  доминирование. Личностные мотивы: справедливость, добро, красота,
+  истина. Формирование личностных мотивов, этносы. Осознанная и
+  неосознанная личностная мотивация. Методы диагностики личностной
+  мотивации.
+
 \item История Великой Отечественной Войны. \\
 
   Рассматривались основные сражения и операции во время ВОВ. Каждое
