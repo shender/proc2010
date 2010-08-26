@@ -21,4 +21,19 @@
 
 \taskpic{Между двумя одинаковыми гладкими брусками массами $m_1$ каждый
   вставлен клин массы $m_2$ с углом $\alpha$. Определите ускорение
-  тел. }{\includegraphics[width=4cm]{p09_12.pdf}}
+  тел. }{
+  \begin{tikzpicture}
+    \node[scale=0.6]{
+    \begin{tikzpicture}[interface/.style={postaction={draw,decorate,decoration={border,angle=-45,amplitude=0.2cm,segment
+            length=1.5mm}}}]
+      % \draw[help lines,step=0.5] (0,0) grid (6,6);
+      \draw[interface] (0,0) -- ++(6,0); \draw[thick] (0.5,0)
+      rectangle ++(2,2) node[midway] {$m_1$}; \draw[thick] (3.5,0)
+      rectangle ++(2,2) node[midway] {$m_1$}; \draw[thick] (2,3) --
+      ++(1,-2) -- ++(1,2) -- cycle node[below=10,left=15] {$m_2$};
+      \draw (3,1) ++(63:0.5) arc (63:117:0.5) node[above=7,right]
+      {$\alpha$};
+    \end{tikzpicture}};
+  \end{tikzpicture}
+%\includegraphics[width=4cm]{p09_12.pdf}
+}

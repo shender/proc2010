@@ -9,7 +9,23 @@
   начальный момент нить с грузом отклоняют от вертикального положения
   на угол $\alpha$ и затем отпускают. Определите ускорение бруска, если
   угол, образованный нитью с вертикалью, не меняется при движении
-  системы. Чему равна масса груза.  }{\includegraphics[width=4cm]{p09_13.pdf}}
+  системы. Чему равна масса груза?  }{
+  \begin{tikzpicture}
+    \node[scale=0.65]{
+    \begin{tikzpicture}[interface/.style={postaction={draw,decorate,decoration={border,angle=-45,amplitude=0.2cm,segment length=1.5mm}}}]
+      \draw[interface] (-3,3) -- ++(0,-3) -- ++ (4,0) -- ++(0,-3);
+      \draw[thick] (-1.5,0) rectangle ++(2,1) node[midway] {$m_0$};
+      \node[circle,draw] (c) at (1.2,1.7) [minimum size=0.2] {};
+      \draw (2.5,0.5) -- (tangent cs:node=c,point={(2.5,0.5)},solution=1);
+      \draw[thick] (1.2,1.7) -- (0.5,1);
+      \draw (-3,1.9) -- ++(4.2,0);
+      \shadedraw[shading=ball] (2.5,0.5) circle (0.15);
+      \draw[dashed] (1.4,2) -- ++(0,-2);
+      \draw (1.4,1.3) arc (-90:-28:0.3) node[below=1] {$\alpha$};
+    \end{tikzpicture}};
+  \end{tikzpicture}
+  % \includegraphics[width=4cm]{p09_13.pdf}
+}
 
 \task{Где находится центр масс: однородного прута, согнутого
   посередине под прямым углом; однородной треугольной пластинки;
@@ -20,33 +36,33 @@
   будет двигаться груз, если обезьяна начнёт равномерно выбирать
   верёвку со скоростью $V$ относительно себя? Массой блоков и трением
   пренебречь.}{
-\begin{tikzpicture}[scale=0.6]
-% потолок
-  \draw (0,0) -- (6,0) (3,0) -- (3,-1.5);
-% блок B
-  \filldraw[thick,white,draw=black] (3,-1.5) circle (0.9)
-  node[black,above=7,right=14] {$B$};
-% верёвка к грузу 2m
-  \draw (2.1,-1.5) -- ++(0,-2);
-% груз 2m
-  \filldraw[black] (1.8,-3.2) rectangle ++(0.6,-0.6)
-  node[above=6,left=10] {$2m$};
-% верёвка к блоку A
-  \draw (3.9,-1.5) -- ++(0,-3);
-% блок A
-  \filldraw[thick,white,draw=black] (3.9,-4.5) circle (0.9)
-  node[black,above=7,right=14] {$A$};;
-% верёвки от блока A
-  \draw (3,-4.5) -- ++(0,-2);
-  \draw (4.8,-4.5) -- ++(0,-2);
-% груз m
-  \filldraw[black] (2.7,-6.2) rectangle ++(0.6,-0.6)
-  node[above=6,left=10] {$m$};
-% обезьяна
-  \draw (4.8,-6.5) -- ++(0.3,-0.2) -- ++(0.3,0.2) ++(-0.3,-0.2) -- ++
-  (0,0.3) circle (0.1) -- ++(0,-0.5) -- ++(0.3,-0.3) ++ (-0.3,0.3) --
-  ++(-0.3,-0.3);
-\end{tikzpicture}
+  \begin{tikzpicture}[interface/.style={postaction={draw,decorate,decoration={border,angle=45,amplitude=0.2cm,segment
+          length=1.5mm}}},scale=0.6]
+      % потолок
+      \draw[interface] (0,0) -- (6,0); \draw (3,0) -- (3,-1.5);
+      % блок B
+      \filldraw[thick,white,draw=black] (3,-1.5) circle (0.9)
+      node[black,above=7,right=14] {$B$};
+      % верёвка к грузу 2m
+      \draw (2.1,-1.5) -- ++(0,-2);
+      % груз 2m
+      \filldraw[black] (1.8,-3.2) rectangle ++(0.6,-0.6)
+      node[above=6,left=10] {$2m$};
+      % верёвка к блоку A
+      \draw (3.9,-1.5) -- ++(0,-3);
+      % блок A
+      \filldraw[thick,white,draw=black] (3.9,-4.5) circle (0.9)
+      node[black,above=7,right=14] {$A$};;
+      % верёвки от блока A
+      \draw (3,-4.5) -- ++(0,-2); \draw (4.8,-4.5) -- ++(0,-2);
+      % груз m
+      \filldraw[black] (2.7,-6.2) rectangle ++(0.6,-0.6)
+      node[above=6,left=10] {$m$};
+      % обезьяна
+      \draw (4.8,-6.5) -- ++(0.3,-0.2) -- ++(0.3,0.2) ++(-0.3,-0.2) --
+      ++ (0,0.3) circle (0.1) -- ++(0,-0.5) -- ++(0.3,-0.3) ++
+      (-0.3,0.3) -- ++(-0.3,-0.3);
+  \end{tikzpicture}
 %\includegraphics[width=4cm]{p09_15.pdf}
 }
 
