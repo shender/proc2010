@@ -11,29 +11,45 @@
 \taskpic{По деревянным сходням, образующим угол $\alpha$ с горизонтом,
   втаскивают за привязанную к нему верёвку ящик. Коэффициент трения
   ящика о сходни $k$. Под каким углом к горизонту надо тянуть верёвку,
-  чтобы с наименьшим усилием втащить ящик? }{\includegraphics[width=4cm]{p09_10.pdf}}
+  чтобы с наименьшим усилием втащить ящик? }{
+\begin{tikzpicture}[interface/.style={postaction={draw,decorate,decoration={border,angle=-45,amplitude=0.2cm,segment length=1.5mm}}},>=stealth]
+   \draw[thick] (0.5,0) -- (3.5,3) -- ++(0,-3) -- cycle;
+   \draw[thick,rotate around={45:(1.5,1)}] (1.5,1) rectangle ++(1,0.5);
+   \draw[very thick,rotate around={45:(1.5,1)},->] (2.5,1.25) --
+   ++(0.7,0.3);
+   \draw (1.2,0) arc (0:45:0.7) node[below=0.2cm,right=0.1cm] {$\alpha$};
+\end{tikzpicture}
+% \includegraphics[width=4cm]{p09_10.pdf}
+}
 
 \taskpic{Тело массы $m_1$ лежит на доске массы $m_2$, находящейся на гладкой
   горизонтальной поверхности. Коэффициент трения между телом и доской
   $k$. Какую силу надо приложить к доске, чтобы тело соскользнуло с
   неё. За какое время тело соскользнёт, если к доске приложена сила
-  $F_0$, а длина доски $l$?  }{\includegraphics[width=4cm]{p09_11.pdf}}
+  $F_0$, а длина доски $l$?  }{
+\begin{tikzpicture}[interface/.style={postaction={draw,decorate,decoration={border,angle=-45,amplitude=0.2cm,segment length=1.5mm}}},>=stealth]
+%  \draw[help lines,step=0.5] (0,0) grid (4,4);
+  \draw[interface] (0.2,0) -- ++(3.2,0);
+  \draw[thick] (1,0) rectangle ++(2,0.5) node[midway] {$m_2$};
+  \draw[thick] (1,0.5) rectangle ++(1,0.5) node[midway] {$m_1$};
+  \draw[very thick,->] (1,0.25) -- ++(-0.5,0) node[above] {$\vec{F}_0$};
+\end{tikzpicture}
+%\includegraphics[width=4cm]{p09_11.pdf}
+}
 
 \taskpic{Между двумя одинаковыми гладкими брусками массами $m_1$ каждый
   вставлен клин массы $m_2$ с углом $\alpha$. Определите ускорение
   тел. }{
-  \begin{tikzpicture}
-    \node[scale=0.6]{
-    \begin{tikzpicture}[interface/.style={postaction={draw,decorate,decoration={border,angle=-45,amplitude=0.2cm,segment
-            length=1.5mm}}}]
-      % \draw[help lines,step=0.5] (0,0) grid (6,6);
-      \draw[interface] (0,0) -- ++(6,0); \draw[thick] (0.5,0)
-      rectangle ++(2,2) node[midway] {$m_1$}; \draw[thick] (3.5,0)
-      rectangle ++(2,2) node[midway] {$m_1$}; \draw[thick] (2,3) --
-      ++(1,-2) -- ++(1,2) -- cycle node[below=10,left=15] {$m_2$};
-      \draw (3,1) ++(63:0.5) arc (63:117:0.5) node[above=7,right]
-      {$\alpha$};
-    \end{tikzpicture}};
-  \end{tikzpicture}
-%\includegraphics[width=4cm]{p09_12.pdf}
+\begin{tikzpicture}[interface/.style={postaction={draw,decorate,decoration={border,angle=-45,amplitude=0.2cm,segment length=1.5mm}}}]
+%  \draw[help lines,step=0.5] (0,0) grid (4,4);
+  \draw[interface] (0.2,0) -- ++(3.6,0);
+  \draw[thick] (0.5,0) rectangle ++(1,1.5) node[midway] {$m_1$}; 
+  \draw[thick] (2.5,0) rectangle ++(1,1.5) node[midway] {$m_1$}; 
+  \coordinate (a) at ($(1,2.25)!2!(1.5,1.5)$);
+  \draw[thick] (1,2.25) -- (a) -- (3,2.25) -- cycle node[below=0.4cm,left=0.5cm]{$m_2$};
+  \draw ($(a)!10pt!(3,2.25)$) arc (atan(3/2):90+atan(2/3):10pt)
+  node[above=0.25cm,right=-0.05cm] {$\alpha$};
+% arc (63:117:0.5) node[above=7,right] {$\alpha$};
+\end{tikzpicture}
+% %\includegraphics[width=4cm]{p09_12.pdf}
 }
