@@ -6,13 +6,23 @@
 \taskpic{Край гладкого горизонтального стола скруглён по окружности
   радиуса $R$. С какой наименьшей скоростью надо пустить тело, чтобы
   оно, достигнув скругления, сразу полетело по
-  пораболе? }{\includegraphics[width=4cm]{p09_9.pdf}}
+  пораболе? }{
+\begin{tikzpicture}[interface/.style={postaction={draw,decorate,decoration={border,angle=-45,amplitude=0.2cm,segment length=1.5mm}}},>=latex]
+  \draw[thick] (0.5,3) -- ++(2,0);
+  \draw[thick] (3.5,2) arc (0:90:1cm);
+  \draw[->] (2.5,2) -- ($(2.5,2)!1cm!(3,2.5)$)
+  node[below=0.7cm,left=-0.1cm] {$R$};
+  \draw[thick] (1,3) rectangle ++(1,0.5);
+  \draw[->] (2,3.25) -- ++(0.5,0);
+\end{tikzpicture}
+%\includegraphics[width=4cm]{p09_9.pdf}
+}
 
 \taskpic{По деревянным сходням, образующим угол $\alpha$ с горизонтом,
   втаскивают за привязанную к нему верёвку ящик. Коэффициент трения
   ящика о сходни $k$. Под каким углом к горизонту надо тянуть верёвку,
   чтобы с наименьшим усилием втащить ящик? }{
-\begin{tikzpicture}[interface/.style={postaction={draw,decorate,decoration={border,angle=-45,amplitude=0.2cm,segment length=1.5mm}}},>=stealth]
+\begin{tikzpicture}[interface/.style={postaction={draw,decorate,decoration={border,angle=-45,amplitude=0.2cm,segment length=1.5mm}}},>=latex]
    \draw[thick] (0.5,0) -- (3.5,3) -- ++(0,-3) -- cycle;
    \draw[thick,rotate around={45:(1.5,1)}] (1.5,1) rectangle ++(1,0.5);
    \draw[very thick,rotate around={45:(1.5,1)},->] (2.5,1.25) --
@@ -27,7 +37,7 @@
   $k$. Какую силу надо приложить к доске, чтобы тело соскользнуло с
   неё. За какое время тело соскользнёт, если к доске приложена сила
   $F_0$, а длина доски $l$?  }{
-\begin{tikzpicture}[interface/.style={postaction={draw,decorate,decoration={border,angle=-45,amplitude=0.2cm,segment length=1.5mm}}},>=stealth]
+\begin{tikzpicture}[interface/.style={postaction={draw,decorate,decoration={border,angle=-45,amplitude=0.2cm,segment length=1.5mm}}},>=latex]
 %  \draw[help lines,step=0.5] (0,0) grid (4,4);
   \draw[interface] (0.2,0) -- ++(3.2,0);
   \draw[thick] (1,0) rectangle ++(2,0.5) node[midway] {$m_2$};
