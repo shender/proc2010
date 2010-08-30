@@ -7,13 +7,16 @@
 \usepackage[pdftex]{graphicx}
 \usepackage{calc}
 \usepackage{tikz}
+\usepackage{circuitikz}
 \usetikzlibrary{arrows}
 \usetikzlibrary{%
     decorations.pathreplacing,%
-    decorations.pathmorphing%
+    decorations.pathmorphing,%
+    decorations.markings%
 }
 \usetikzlibrary{calc}
 \usetikzlibrary{shadows}
+\usetikzlibrary{patterns}
 \usepackage[margin=2cm]{geometry}
 
 \newcounter{notask}
@@ -248,7 +251,7 @@
 \item Масса. Понятие массы. Измерение массы тел (гравитационная
   масса). Понятие материальной точки.
 \item Характеристики механического движения. Траектория, путь,
-  перемещение, ско\-рость.
+  перемещение, скорость.
 \item Относительность движения. Системы отсчета. Равномерное
   прямолинейное движение. Первый закон Ньютона.
 \item Определение силы. Импульс тела. Второй закон

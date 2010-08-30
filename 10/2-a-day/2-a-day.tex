@@ -4,7 +4,23 @@
 $\alpha$ с вертикалью, а сила натяжения нити постоянна и равна $T$. За 
 какое время шарики столкнутся, если в начальный момент они 
 неподвижны и находятся на одной высоте на расстоянии $L$ друг от 
-друга?}{\includegraphics[width=3cm]{d10_01.png}}
+друга?}{
+\begin{tikzpicture}[>=latex]
+  \draw (0.4,3.6) -- (1.2,0.8);
+  \draw (3.6,3.6) -- (2.8,0.8);
+  \draw [dashed,blue] (0.4,3.6) -- +(0,-2);
+  \draw [blue] (0.4,3.6) ++(0,-1) arc (-90:-90+atan(0.8/2.8):1);
+  \draw [dashed,blue] (3.6,3.6) -- +(0,-2);
+  \draw [blue] (0.4,3.6) ++(0,-1) arc (-90:-90+atan(0.8/2.8):1) node
+  [below=10,right=-10] {$\alpha$};
+  \draw [blue] (3.6,3.6) ++(0,-1) arc (-90:-90-atan(0.8/2.8):1) node
+  [below=10,right=-5] {$\alpha$};
+
+  \draw [very thick,brown] (1.2,0.8) -- (2.8,0.8);
+  \filldraw [black] (1.2,0.8) circle (0.07) node[below] {$m$};
+  \filldraw [black] (2.8,0.8) circle (0.07) node[below] {$m$};;
+\end{tikzpicture}
+}
 
 \task{Мальчик раскручивает веревку длиной $L$ с привязанным к ее 
 концу камнем. В момент, когда траектория камня представляет 
@@ -17,7 +33,20 @@ $\alpha$ с вертикалью, а сила натяжения нити пос
 находящиеся на разных высотах. Векторы скорости ветра на этих 
 высотах $\vec v_A$ и $\vec v_B$ также показаны на рисунке. Объясните, как 
 построить вектор скорости движения по поверхности земли точки 
-пересечения O теней облаков.}{\includegraphics[width=3cm]{d10_03.png}}
+пересечения O теней облаков.}{
+\begin{tikzpicture}[>=latex]
+  \filldraw[black!20!white] (0.8,4) -- ++(1.2,-2.4) -- +(1.8,2.4) -- cycle;
+  \filldraw[black] (0.8,4) -- (0,4) -- ++(1.5*1.2,1.5*-2.4) -- ++(2.2,2.8)
+  -- ++(0,0.8) -- ++(-0.2,0) -- ++(-1.8,-2.4) -- cycle;
+  \draw (0.6,2) node {$A$};
+  \draw (3.6,2) node {$B$};
+  \draw (2.05,2) node {$O$};
+  \draw[very thick,->] (0.8,0.4) -- ++(0.2,0.8) node[midway, left]
+  {$\vec{v}_A$};
+  \draw[very thick,->] (3.4,0.4) -- ++(-0.6,0.8) node[midway, right]
+  {$\vec{v}_B$};
+\end{tikzpicture}
+}
 
 \task{По прямому участку железнодорожного пути движется вагон с 
 ускорением 2{,}8~м/с$^2$. В вагоне мальчик пускает игрушечный состав 
@@ -32,7 +61,19 @@ $\alpha$ с вертикалью, а сила натяжения нити пос
  Ее центр находится на расстоянии $d$ от прямой, соединяющей 
 центры тяжелых шайб. Какую скорость приобретет легкая шайба 
 после того, как шайбы разлетятся? Все шайбы жесткие 
-(недеформируемые).}{\includegraphics[width=3cm]{d10_05.png}}
+(недеформируемые).}{
+\begin{tikzpicture}[>=latex]
+   \node[circle,draw,minimum size=20,very thick,fill=gray] at (0.5,2) (a) {};
+   \node[circle,draw,minimum size=20,very thick,fill=gray] at (3.5,2) (b) {};
+   \draw[dashed,thick] (a.east) -- (b.west);
+   \draw[->,very thick] (a.east) -- ++(0.4,0) node [above] {$v$};
+   \draw[->,very thick] (b.west) -- ($(b.west) + (-0.4,0)$) node [above] {$v$};
+   \filldraw[red] ($(a.east)!0.5!(b.west)$) ++ (0,-0.3) circle (0.1);
+   \draw[blue!80,dashed,dash pattern=on 1 pt off 1pt]
+   ($(a.east)!0.5!(b.west)$) -- ++(0,-0.3);
+   \draw[->,blue!80] (1,1) node[left] {$d$} to[out=0,in=180] (1.9,1.85);
+\end{tikzpicture}
+}
 
 \taskpic{В точках A и B жесткого невесомого стержня укреплены два 
 маленьких шарика. В точке O стержень закреплен и может свободно 
@@ -41,7 +82,21 @@ $\alpha$ с вертикалью, а сила натяжения нити пос
 маленький угол и отпускают. Найти силу, действующую на шарик В со 
 стороны стержня в момент, когда угол между стержнем и вертикалью 
 равен $\alpha$. Масса каждого груза $m$, длина стержня $L$, 
-OA=AB.}{\includegraphics[width=2.5cm]{d10_06.png}}
+OA=AB.}{
+\begin{tikzpicture}[>=latex]
+  \draw[thick] (2,2) circle (1.5);
+  \draw[very thick] (2,3.5) -- (2,2) -- ++(-135:1.5);
+  \filldraw[black] (2,2.75) circle (0.1) node[right] {$A$};
+  \filldraw[black] (2,3.5) circle (0.1) node[above right] {$B$};
+  \draw (2,2) node[right] {$O$};
+  \filldraw[black] (2,2) ++(-135:0.75) circle (0.1);
+  \filldraw[black] (2,2) ++(-135:1.5) circle (0.1);
+
+  \draw[dashed,blue] (2,2) -- ++(0,-1.5);
+  \draw[blue] (2,2) ++ (0,-0.5) arc (-90:-135:0.5);
+  \draw[blue] (1.75,1.25) node {$\alpha$};
+\end{tikzpicture}
+}
 
 \taskpic{Массивная бусинка нанизана на невесомую нерастяжимую нить 
 длиной $L$, по которой может скользить без трения. Концы нити 
@@ -50,7 +105,13 @@ OA=AB.}{\includegraphics[width=2.5cm]{d10_06.png}}
 начальный момент бусинку удерживают в таком положении, чтобы 
 нить и стержни составляли квадрат. Бусинку отпускают. Найдите ее 
 ускорение сразу после этого и время, за которое она достигнет 
-вертикального стержня.}{\includegraphics[width=3cm]{d10_07.png}}
+вертикального стержня.}{
+\begin{tikzpicture}[>=latex]
+   \draw[very thick] (0.2,3.5) -- ++(3.3,0) -- ++(0,-3.3);
+   \draw[thick,brown] (1.5,3.5) -- ++(0,-2) -- ++(2,0);
+   \draw[thick,brown] (1.5,1.5) circle (0.1);
+\end{tikzpicture}
+}
 
 \task{В чайнике нагревают воду кипятильником, подключенным к 
 источнику постоянного напряжения $U$. Масса воды $m$, а ее удельная 
@@ -188,7 +249,21 @@ $\alpha$ к горизонтали? Считать, что глаза челов
 Определите угол $\alpha_2$, под которым брошен второй шарик, а также 
 расстояние между шариками через 1~с после броска. Сопротивлением 
 воздуха пренебречь. Ускорение свободного падения положить 
-равным 10~м/с$^2$.}{\includegraphics[width=3cm]{d10_23.png}}
+равным 10~м/с$^2$.}{
+\begin{tikzpicture}[>=latex]
+   \draw[help lines,step=0.5] (0.2,-0.5) grid (3.8,4);
+   \draw[thick,->] (0.5,0.5) -- (3.8,0.5) node [above left] {\tiny{$t$, с}};
+   \draw[thick,->] (0.5,0.5) -- (0.5,4) node [below right]
+   {\tiny{$x_1/\sqrt{3}$, м}};
+   \draw[red,very thick] (0.5,0.5) -- (3.2,3.2);
+   \draw (1.5,0.6) -- (1.5,0.4) node[below] {\footnotesize{1}};
+   \draw (2.5,0.6) -- (2.5,0.4) node[below] {\footnotesize{2}};
+   \draw (3.5,0.6) -- (3.5,0.4) node[below] {\footnotesize{3}};
+
+   \draw (0.45,1.5) -- (0.6,1.5) node[left] {\footnotesize{5}};
+   \draw (0.45,2.5) -- (0.6,2.5) node[left] {\footnotesize{10}};
+\end{tikzpicture}
+}
 
 \task{Лабораторная плитка, сопротивление которой $R = 20\mbox{ Ом}$, 
 включена в сеть последовательно с сопротивлением $R_0 = 10\mbox{ Ом}$. 
@@ -269,7 +344,22 @@ $\alpha$ к горизонтали? Считать, что глаза челов
 прямолинейно со скоростью $v$. Далеко впереди на расстоянии $L/2$ от 
 линии движения центра палки находится маленькая кегля. При каких 
 значениях $\omega$ палка обязательно собьет 
-кеглю?}{\includegraphics[width=4cm]{d10_33.png}}
+кеглю?}{
+\begin{tikzpicture}[>=latex]
+   \draw[dashed,blue,rotate around={60:(0.5,1.5)}] (0.5,1.5) -- +(0,0.6) node [coordinate, near end] (a) {};
+   \draw[dashed,blue,rotate around={60:(0.5,1.5)}] (2,1.5) -- +(0,0.6) node [coordinate, near end] (b) {};
+   \draw[blue,|<->|] (a) -- node[fill=white] {$2L$} (b);
+   \draw[line width=2pt,rotate around={60:(0.5,1.5)}] (0.5,1.5) --
+   ++(1.5,0);
+   \draw[dashed] (0.5,1.5) ++(60:0.75) -- + (3,0);
+   \draw[->] (0.5,1.5) ++(60:0.75) -- + (0.75,0) node [below] {$v$};
+   \draw[->] (0.5,1.25) arc (135:330:0.3) node[above] {$\omega$};
+   \filldraw[black] (0.5,1.5) ++(60:0.75) ++(2.5,0) ++(0,-1.5/4)
+   circle (0.05) node (c) {};
+   \draw[blue,dashed,dash pattern=on 1pt off 1pt] (c) ++(0,-0.02) -- ++(0,1.5/4);
+   \draw[blue,->] (3,3) node [right] {$L/2$} to[out=180,in=180] (3.3,2);
+\end{tikzpicture}
+}
 
 \taskpic{На вертикальный цилиндрический стержень радиуса $R$ 
 насажено устройство, состоящее из корпуса, в котором находятся 
