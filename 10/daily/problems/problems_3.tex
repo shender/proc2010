@@ -38,7 +38,17 @@
   сферическую полость так, как показано на рисунке. Толщина пластины
   $h$, объёмная плотность заряда $\rho$. Чему равна напряжённость
   электрического поля в точке $A$, в точке
-  $B$?}{\includegraphics[width=4cm]{d10_3_1.png}}
+  $B$?}{
+\begin{tikzpicture}
+  \filldraw[pattern=north east lines,even odd rule] (0.2,1) rectangle
+  +(3.6,2) (2,2) circle (1);
+  \draw[thick,blue,dashed] (2,2) node[black,right] {$O$} -- ++(-1,0)
+  node[black,above right] {$A$};
+  \draw (2,3.2) node {$B$};
+  \draw (3.3,1.3) node[fill=white] {$\rho$};
+\end{tikzpicture}
+}
+
 \task{
   Две пересекающиеся под углом $\alpha$ бесконечные плоскости делят
   пространство на четыре области. Чему равна напряжённость
