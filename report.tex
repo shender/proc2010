@@ -5,9 +5,13 @@
 \usepackage[russian]{babel}
 \usepackage[utf8]{inputenc}
 \usepackage[pdftex]{graphicx}
+% расчёт геометрии макета
 \usepackage{calc}
+% рисунки
 \usepackage{tikz}
+% электрические цепи
 \usepackage{circuitikz}
+% разные библиотеки для рисования
 \usetikzlibrary{arrows}
 \usetikzlibrary{%
     decorations.pathreplacing,%
@@ -17,6 +21,7 @@
 \usetikzlibrary{calc}
 \usetikzlibrary{shadows}
 \usetikzlibrary{patterns}
+% геометрия макета
 \usepackage[margin=2cm]{geometry}
 
 \newcounter{notask}
@@ -70,6 +75,9 @@
 \newcommand{\eps}{\varepsilon}
 
 % settings for tikz
+% interface = лохматый отрезок
+% spring = пружинка
+% >=latex --- тип стрелочки
 \tikzset{>=latex,interface/.style={postaction={draw,decorate,decoration={border,angle=45,amplitude=0.2cm,segment length=1.4323mm}}},spring/.style={decorate,decoration={snake,amplitude=1mm, segment length=2mm},thick}}
 
 \pagestyle{empty}
@@ -685,7 +693,7 @@
 \setcounter{notask}{1}
 \vspace{1cm}
 
-Лучшие теоретики: Мария Муретова, Софья Коско. 
+Лучшие теоретики: Софья Коско, Мария Муретова. 
 
 \subsubsection{Задачи 9 класса.}
 \label{sec:2-a-day_9}
@@ -693,7 +701,7 @@
 \setcounter{notask}{1}
 \vspace{1cm}
 
-Лучшие теоретики: Юрий Серов, Антон Грудкин, Николай Капралов. 
+Лучшие теоретики: Антон Грудкин, Николай Капралов, Юрий Серов.
 
 \subsubsection{Задачи 10 класса.}
 \label{sec:2-a-day_10}
