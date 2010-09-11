@@ -22,7 +22,7 @@
     {$m$} ++(1,-1) rectangle ++(1,1) node[midway] {$m$};
     \coordinate (a) at (1.4,0);
     \coordinate (f) at ($(a)!2!(2.4,1)$);
-    \draw[thick] (a) -- (f);
+    \draw[very thick] (a) -- (f);
     \draw[->] (f) -- ++(-45:1) node[below] {$\vec{F}$};
   \end{tikzpicture}
 }
@@ -35,8 +35,8 @@
   \begin{tikzpicture}[interface/.style={postaction={draw,decorate,decoration={border,angle=-45,amplitude=0.2cm,segment length=1.5mm}}},>=latex]
     \draw[interface] (0,3) -- (0,0) -- (3.1,0);
     \draw[very thick] (3,0) -- +(135:5.3) node[midway, above] {$l$};
-    \draw (3,0) +(135:0.5) arc (135:180:0.5);
-    \path (3,0) + (160:0.7) node{$\alpha$};
+    \draw[blue] (3,0) +(135:0.5) arc (135:180:0.5);
+    \path[blue] (3,0) + (160:0.7) node{$\alpha$};
     \draw[dashed,blue!40] (0,0) -- +(-0.5,0) node [coordinate, near end] (a) {};
     \draw[dashed,blue!40] (0,3) -- +(-0.5,0) node [coordinate, near end] (b) {};
     \draw[blue,|<->|] (a) -- node[fill=white] {$h$} (b);

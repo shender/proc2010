@@ -93,13 +93,13 @@
 термосе? Удельная теплоемкость воды $c$, начальная температура $T$.  
 Потерями тепла пренебречь. }{
 \begin{tikzpicture}
-  \draw[blue] (0.75,1.5) to[out=45] (2,2.5);
-  \draw[red] (0,1.5) to[out=90,in=90] (2.5,2.5);
-  \draw[red] (0.75,2.25) to[out=90] (2.5,2.5);
-  \draw[red] (1.5,1.5) to[out=20,in=-100] (2.5,2.5);
-  \draw[red] (0.75,0.75) to[out=-20,in=-100] (2.5,2.5);
-  \draw[very thick] (0,1.5) -- (1.5,1.5);
-  \draw[very thick] (0.75,0.75) -- (0.75,2.25);
+  \draw[blue,thick] (0.75,1.5) to[out=45] (2,2.5);
+  \draw[red,thick] (0,1.5) to[out=90,in=90] (2.5,2.5);
+  \draw[red,thick] (0.75,2.25) to[out=90] (2.5,2.5);
+  \draw[red,thick] (1.5,1.5) to[out=20,in=-100] (2.5,2.5);
+  \draw[red,thick] (0.75,0.75) to[out=-20,in=-100] (2.5,2.5);
+  \draw[line width=0.15cm] (0,1.5) -- (1.5,1.5);
+  \draw[line width=0.15cm] (0.75,0.75) -- (0.75,2.25);
   \draw[red,fill=white] (2.5,2.5) circle (0.05) node[below right] {$-$};
   \draw[blue,fill=white] (2,2.5) circle (0.05) node[below] {$+$};
 \end{tikzpicture}  
@@ -284,10 +284,10 @@ $v_2$. В некоторый момент времени первый автом
 }{
 \begin{tikzpicture}
   \draw[interface,thick] (1,4) -- ++(2,0);
-  \draw (2,4) -- ++(0,-1);
-  \draw[thick] (2,3) circle (0.5);
-  \draw (2.5,3) -- ++(0,-1.25);
-  \draw (1.5,3) -- ++(0,-1);
+  \draw[thick] (2,4) -- ++(0,-1);
+  \draw[very thick] (2,3) circle (0.5);
+  \draw[thick] (2.5,3) -- ++(0,-1.25);
+  \draw[thick] (1.5,3) -- ++(0,-1);
   \draw[fill=black] (1.25,2) rectangle ++(0.5,-0.5);
   \draw (0.9,1.75) node {$M$};
   \draw[fill=gray] (2.3,1.75) rectangle ++(0.4,-0.5);
@@ -365,32 +365,6 @@ $\lambda = 3{,}3\cdot10^5$~Дж/кг, коэффициент теплопров�
 вещества площадью $S$ и толщиной $h$ при разности температур $\Delta t$ 
 между поверхностями, определяется соотношением $q = kS\Delta t/h$. }
 
-\begin{figure}[h]
-  \centering
-  \begin{tikzpicture}
-    \draw[help lines,step=0.2] (0,0) grid (10.5,9.7);  
-    \draw [very thick,->] (0,0) -- (11,0);
-    \draw [very thick,->] (0,0) -- (0,11) node[right] {$t,{}^\circ C$};
-    \draw [line width=2.5,red] (0,2) .. controls (2,6) and (6,7.75)
-    .. (10,9);
-    \draw[thick,blue,dashed] (0,7) -- (10.5,7);
-    \draw[thick,blue,dashed] (0,9) -- (10.5,9);
-    \draw[thick,blue,dashed] (5,0) -- (5,9.7);
-    \draw[thick,blue,dashed] (10,0) -- (10,9.7);
-    \draw[thick,blue,dashed] (3,0) -- (3,9.7);
-    \foreach \x in {1,2,3,4,5,6,7,8,9,10} {
-      \draw (\x,0.1) -- ++(0,-0.2) node[below] {\x} ;
-    }
-    \foreach \y in {10,20,30,40,50,60,70,80,90,100} {
-      \draw (0.1,0.1*\y) -- ++(-0.2,0) node[left] {\y} ;
-    }
-    \draw (3,-1) node {$\tau_0$};
-    \draw (5,-1) node {$\tau_2$};
-    \draw (10,-1) node {$\tau_1$};
-    \draw (5.5,-1.7) node {$\tau,\unit{мин}$};
-  \end{tikzpicture}  
-\end{figure}
-
 \task{ Цилиндрический медный проводник площадью поперечного 
 сечения $S$ = 0{,}1~см$^2$ подключается к источнику постоянного тока. 
 Температура проводника начинает увеличиваться. Как видно из 
@@ -408,6 +382,33 @@ $t_1$, если бы проводник был окружен теплонепр
 Для меди: удельная теплоемкость $c$ = 390~Дж/(кг$\cdot^\circ$C), удельное 
 сопротивление $\rho_{\mbox{\textit{м}}}$ = 1{,}75$\cdot 10^{-8}$~Ом$\cdot$м, плотность $\rho$ 
 = 8{,}9$\cdot10^3$~кг/м$^3$. }
+
+\begin{figure}[h]
+  \centering
+  \begin{tikzpicture}
+    \draw[help lines,step=0.2] (0,0) grid (10.5,9.25);  
+    \draw [very thick,->] (0,0) -- (11,0);
+    \draw [very thick,->] (0,0) -- (0,9.5) node[right] {$t,{}^\circ C$};
+    \draw [line width=2.5,red] (0,2) .. controls (2,6) and (6,7.75)
+    .. (10,9);
+    \draw[thick,blue,dashed] (0,7) -- (10.5,7);
+    \draw[thick,blue,dashed] (0,9) -- (10.5,9);
+    \draw[thick,blue,dashed] (5,0) -- (5,9.25);
+    \draw[thick,blue,dashed] (10,0) -- (10,9.25);
+    \draw[thick,blue,dashed] (3,0) -- (3,9.25);
+    \foreach \x in {1,2,3,4,5,6,7,8,9,10} {
+      \draw (\x,0.1) -- ++(0,-0.2) node[below] {\x} ;
+    }
+    \foreach \y in {10,20,30,40,50,60,70,80,90} {
+      \draw (0.1,0.1*\y) -- ++(-0.2,0) node[left] {\y} ;
+    }
+    \draw (3,-1) node {$\tau_0$};
+    \draw (5,-1) node {$\tau_2$};
+    \draw (10,-1) node {$\tau_1$};
+    \draw (5.5,-1.7) node {$\tau,\unit{мин}$};
+  \end{tikzpicture}  
+\end{figure}
+
 
 %%% Local Variables: 
 %%% mode: latex
