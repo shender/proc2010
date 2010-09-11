@@ -1,6 +1,7 @@
 \documentclass[12pt,a4paper,oneside]{scrartcl}
 \usepackage{amsmath,amssymb}
-\usepackage[unicode,colorlinks]{hyperref}
+\usepackage[unicode,colorlinks,pdfauthor={Igor Shenderovich, Ilya
+  Barygin}, pdfsubject={Physical camp'2010. Report.},pdfkeywords={report, camp, 2010, physics, school},linktoc=page]{hyperref}
 \usepackage{indentfirst,misccorr}
 \usepackage[russian]{babel}
 \usepackage[utf8]{inputenc}
@@ -9,6 +10,8 @@
 \usepackage{subfig}
 % пакет для расчёта геометрии макета
 \usepackage{calc}
+% пакет для графиков
+\usepackage{pgfplots}
 % пакет для рисунков
 \usepackage{tikz}
 % пакет для рисования электрических цепей
@@ -83,14 +86,13 @@
 \tikzset{>=latex,interface/.style={postaction={draw,decorate,decoration={border,angle=45,amplitude=0.2cm,segment length=1.4323mm}}},spring/.style={decorate,decoration={snake,amplitude=1mm, segment length=2mm},thick}}
 
 \pagestyle{empty}
-\graphicspath{{./photos/}{./08/battle/}{./09/battle/}{./10/daily/problems/}{./10/battle/final/}{./10/battle/semifinal/}{./11/battle/final/}{./11/battle/semifinal/}{./08/2-a-day/}{./09/2-a-day/}{./10/2-a-day/}{./11/2-a-day/}}
-
+\graphicspath{{./photos/}}
 
 \begin{document}
 \parindent=5mm
 \righthyphenmin=2
 \begin{center}
-  \small{\textsf{Здесь должно быть название организации}}
+  \small{\textsf{Индивидуальный предприниматель Бухалкин Апанас представляет}}
 
 \vfill
 \LARGE{\textsc{XVI Летняя Физическая Школа}}\\
@@ -113,7 +115,11 @@
 
 Летняя Физическая Школа в 2010 году проходила в шестнадцатый
 раз. Школа началась 17 июля, а закончилась 6
-августа. Продолжительность Школы составила три недели. 
+августа. Продолжительность Школы составила три недели.
+
+Школа проходила в Ленинградской области: в одном из живописнейших мест
+Карельского перешейка, на берегу Суходольского озера (на базе
+пионерского лагеря <<Спутник>>).
 
 В работе ЛФШ участвовали 67 школьников. Преподавательская и воспитательская
 деятельность осуществлялась силами 18 человек.
@@ -129,8 +135,23 @@
 
 \input{./08/list/list}
 \input{./09/list/list}
+\begin{figure}[h]
+  \centering
+  \includegraphics{faces/89.jpg}
+\end{figure}
 \input{./10/list/list}
+\begin{figure}[h]
+  \centering
+  \includegraphics{faces/10.jpg}
+\end{figure}
+\clearpage
 \input{./11/list/list}
+\begin{figure}[h]
+  \centering
+  \includegraphics{faces/11.jpg}
+\end{figure}
+
+
 
 \subsection{Преподаватели Летней Физической Школы. }
 \label{sec:teachers}
@@ -173,7 +194,7 @@
 физике, математике и астрономии различных уровней (городских,
 Всероссийских и Международных).
 
-\section{Образовательная часть.}
+\section{Образовательная программа.}
 \label{sec:science}
 
 Главное звено в образовательной цепочке ЛФШ~---~\textbf{ежедневные
@@ -258,6 +279,12 @@
 \smallskip
 \parindent=0mm
 
+\begin{figure}[h]
+  \centering
+  \includegraphics{/events/daily08_1.jpg}
+\end{figure}
+
+
 \input{./08/daily/problems/problems_1}
 \input{./08/daily/problems/problems_2}
 \input{./08/daily/problems/problems_3}
@@ -290,6 +317,11 @@
 \textsf{Преподаватель: С.М.\,Атамась.}
 \smallskip
 \parindent=0mm
+
+\begin{figure}[h]
+  \centering
+  \includegraphics{/events/daily09_1.jpg}
+\end{figure}
 
 \input{./09/daily/problems/problems_1}
 \input{./09/daily/problems/problems_2}
@@ -324,6 +356,11 @@
 
 \textsf{Преподаватель: Д.С.\,Смирнов.}
 \smallskip
+
+\begin{figure}[h]
+  \centering
+  \includegraphics{/events/daily10_1.jpg}
+\end{figure}
 
 \input{./10/daily/problems/problems_1}
 \input{./10/daily/problems/problems_2}
@@ -432,6 +469,13 @@
 
 \subsection{Факультативы.}
 \label{sec:elective}
+
+\begin{figure}[h]
+  \centering
+  \subfloat[Р.С. Колеватов рассказывает про эксперименты в физике частиц.]{\includegraphics{/events/fak_1.jpg}}
+  \hspace{0.2cm}
+  \subfloat[Вечерний факультатив по истории.]{\includegraphics[height=6.25cm]{/events/fak_2.jpg}}
+\end{figure}
 
 Каждый рабочий день в ЛФШ проводились факультативы, или
 спецкурсы. Спецкурсы обычно представляют собой серию из 4-5 лекций по
@@ -543,6 +587,13 @@
 (полуфинал и финал), участвовало 21 и 23 человека соответственно
 (по четыре команды в каждом классе). 
 
+\begin{figure}[h]
+  \centering
+  \subfloat[Физбой 10 класса: финал.]{\includegraphics{/events/fb10_1.jpg}}
+  \hspace{1cm}
+  \subfloat[Физбой 8 класса.]{\includegraphics{/events/fb08_1.jpg}}
+\end{figure}
+
 Задачи для физбоёв подбирались в основном из сборников задач повышенной
 сложности, а также из всевозможных физических олимпиад. Использовалась
 следующая литература: 
@@ -591,6 +642,13 @@
 непосредственно перед окончанием смены. В противном случае, командам
 даётся дополнительное время на исследование до конца смены.
 
+Команды сами разрабатывают методику проведения экспериментальной части
+исследования. Соответственно, команды также сами подбирают
+оборудование для эксперимента из имеющегося в лагере. Кроме того, в
+задачу исследования входит также теоретическое обоснование имеющейся
+модели являения. Жюри оценивает исследование по сданному отчёту, а
+также по устному докладу. 
+
 \begin{center}
   \textsf{Темы исследований по <<Большой Задаче>>.}
 \end{center}
@@ -626,17 +684,34 @@
 \com{TODO}
 
 \item \textit{(10-11 класс)} Исследовать силу сопротивления воды. 
+
+  В целом, стратегии команд заключались в применении цифровых
+  фотоаппаратов к регистрации процесса. Пользуясь тем, что фотоаппарат
+  позволяет записывать видеоролики с достаточно большим числом кадров
+  в секунду (от 20 до 25 кадров), команды довольно точно померили
+  зависимость скорость погружения грузов в воде от времени, и на
+  основании этого вычислили силу сопротивления.
+
+  Другая методика заключалась в том, что исследователи контролировали
+  непосредственно ускорение, с которым погружался груз. Для этого был
+  сконструирован и отградуирован динамометр. Тем не менее, оказалось,
+  что в этом случае точность приборов невелика, что выражается в
+  большой погрешности получающихся результатов. 
+
 \end{itemize}
 
 Приведём отчёты команд, которые по мнению жюри лучше всех справились с
 исследованиями.
 
+\clearpage
 \input{./09/bz/bz09_1}
-\vspace{0.2cm}
-\hrule
-\vspace{0.2cm}
+
+\clearpage
+\input{./09/bz/bz09_2}
+\vspace{1cm}
 
 \input{./10/bz/bz10}
+
 
 \subsection{<<День Изобретателя>>.}
 \label{sec:day_inventor}
@@ -651,6 +726,17 @@
 10-11 классов~---~установку, выдающую максимально возможную
 \textbf{электрическую мощность} (при этом запрещалось использовать
 любые готовые источники тока, например, розетки или батарейки). 
+
+\begin{figure}[h]
+  \centering
+  \subfloat{\includegraphics{/events/di11_1.jpg}}
+  \hspace{1cm}
+  \subfloat{\includegraphics{/events/di11_3.jpg}}
+  \hspace{1cm}
+  \subfloat{\includegraphics{/events/di11_2.jpg}}
+  \hspace{1cm}
+  \subfloat{\includegraphics{/events/di09_1.jpg}}
+\end{figure}
 
 \subsection{<<День Экспериментатора>>.}
 \label{sec:day_exp}
@@ -755,9 +841,7 @@
 довольно сложными с технической точки зрения (так, задачу №1 решила
 всего одна команда). 
 
-\com{TODO}
-
-\section{Развлекательная часть.}
+\section{Культурно--развлекательная программа.}
 \label{sec:fun}
 
 Во второй половине дня в ЛФШ проводятся различные традиционные игры и
@@ -828,5 +912,14 @@
 проводилась также интеллектуально--юмористическая игра
 \textbf{<<Завалинка>>}, в которой команды соревнуются в написании
 лучшей энциклопедической статьи для неизвестного им слова. 
+
+\section{Благодарности.}
+\label{sec:acknowledgments}
+
+Организаторы и преподаватели Летней Физической Школы считают своей
+приятной обязанностью поблагодарить фонд некоммерческих программ
+<<Династия>>, а также фонд <<Современное Естествознание>> за
+оказанную финансовую помощь в рамках проекта Р10-150 (конкурс образовательных
+программ для школьников). 
 
 \end{document}
