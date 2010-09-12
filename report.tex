@@ -7,7 +7,7 @@
 \usepackage[utf8]{inputenc}
 \usepackage[pdftex]{graphicx}
 % для нескольких рисунков рядом
-\usepackage{subfig}
+\usepackage[labelformat=simple]{subfig}
 % пакет для расчёта геометрии макета
 \usepackage{calc}
 % пакет для графиков
@@ -78,6 +78,7 @@
 \newcommand{\com}[1]{{\Large{\texttt{{\color{red}(#1)}}}}}
 \newcommand{\unit}[1]{\text{ #1}}
 \newcommand{\eps}{\varepsilon}
+\renewcommand{\thesubfigure}{\relax}
 
 % settings for tikz
 % interface = лохматый отрезок
@@ -135,22 +136,17 @@
 
 \input{./08/list/list}
 \input{./09/list/list}
-\begin{figure}[h]
-  \centering
-  \includegraphics{faces/89.jpg}
-\end{figure}
 \input{./10/list/list}
-\begin{figure}[h]
-  \centering
-  \includegraphics{faces/10.jpg}
-\end{figure}
-\clearpage
 \input{./11/list/list}
+
 \begin{figure}[h]
   \centering
-  \includegraphics{faces/11.jpg}
+  \subfloat[Параллель 8 и 9 класса.]{\includegraphics[width=0.45\textwidth]{faces/group/89}}
+  \hspace{0.05\textwidth}
+  \subfloat[Параллель 10
+  класса.]{\includegraphics[width=0.45\textwidth]{faces/group/10}}\\
+  \subfloat[Параллель 11 класса.]{\includegraphics[width=0.45\textwidth]{faces/group/11}}
 \end{figure}
-
 
 
 \subsection{Преподаватели Летней Физической Школы. }
@@ -203,6 +199,13 @@
 физхоккей). Занятия проходят отдельно для каждого класса
 (см. разделы \ref{sec:daily_8}, \ref{sec:daily_9}, \ref{sec:daily_10},
 \ref{sec:daily_11}). 
+
+\begin{figure}[h]
+  \centering
+  \subfloat{\includegraphics[width=0.45\textwidth]{/events/daily08_1}}
+  \hspace{0.05\textwidth}
+  \subfloat{\includegraphics[width=0.45\textwidth]{/events/daily10_1}}
+\end{figure}
 
 В этом году занятия проводились с 9:45 до 13:45. Для удобства
 восприятия материала четыре часа занятий были поделены на две
@@ -279,12 +282,6 @@
 \smallskip
 \parindent=0mm
 
-\begin{figure}[h]
-  \centering
-  \includegraphics{/events/daily08_1.jpg}
-\end{figure}
-
-
 \input{./08/daily/problems/problems_1}
 \input{./08/daily/problems/problems_2}
 \input{./08/daily/problems/problems_3}
@@ -317,11 +314,6 @@
 \textsf{Преподаватель: С.М.\,Атамась.}
 \smallskip
 \parindent=0mm
-
-\begin{figure}[h]
-  \centering
-  \includegraphics{/events/daily09_1.jpg}
-\end{figure}
 
 \input{./09/daily/problems/problems_1}
 \input{./09/daily/problems/problems_2}
@@ -356,11 +348,6 @@
 
 \textsf{Преподаватель: Д.С.\,Смирнов.}
 \smallskip
-
-\begin{figure}[h]
-  \centering
-  \includegraphics{/events/daily10_1.jpg}
-\end{figure}
 
 \input{./10/daily/problems/problems_1}
 \input{./10/daily/problems/problems_2}
@@ -433,7 +420,16 @@
 \setcounter{notask}{1}
 \vspace{1cm}
 
-Лучшие теоретики: Андрей Йона, Павел Ходунов. 
+\begin{center}
+\textbf{Лучшие теоретики:}
+\end{center}
+
+\begin{figure}[h]
+  \centering
+  \subfloat[Андрей Йона]{\includegraphics[height=6cm]{/faces/best_th/iona}}
+  \hspace{0.05\textwidth}
+  \subfloat[Павел Ходунов]{\includegraphics[height=6cm]{/faces/best_th/pkhodunov}}
+\end{figure}
 
 \subsubsection{Задачи 8 класса.}
 \label{sec:2-a-day_8}
@@ -441,7 +437,16 @@
 \setcounter{notask}{1}
 \vspace{1cm}
 
-Лучшие теоретики: Софья Коско, Мария Муретова. 
+\begin{center}
+  \textbf{Лучшие теоретики:}
+\end{center}
+
+\begin{figure}[h]
+  \centering
+  \subfloat[Софья Коско]{\includegraphics[height=6cm]{/faces/best_th/skosko}}
+  \hspace{0.05\textwidth}
+  \subfloat[Мария Муретова]{\includegraphics[height=6cm]{/faces/best_th/muretova}}
+\end{figure}
 
 \subsubsection{Задачи 9 класса.}
 \label{sec:2-a-day_9}
@@ -449,7 +454,19 @@
 \setcounter{notask}{1}
 \vspace{1cm}
 
-Лучшие теоретики: Антон Грудкин, Николай Капралов, Юрий Серов.
+\begin{center}
+  \textbf{Лучшие теоретики:}
+\end{center}
+
+\begin{figure}[h]
+  \centering
+  \subfloat[Антон Грудкин]{\includegraphics[height=6cm]{/faces/best_th/grudkin}}
+  \hspace{0.05\textwidth}
+  \subfloat[Николай Капралов]{\includegraphics[height=6cm]{/faces/best_th/kapralov}}
+  \hspace{0.05\textwidth}
+  \subfloat[Юрий Серов]{\includegraphics[height=6cm]{/faces/best_th/serov}}
+\end{figure}
+
 
 \subsubsection{Задачи 10 класса.}
 \label{sec:2-a-day_10}
@@ -465,16 +482,24 @@
 \setcounter{notask}{1}
 \vspace{1cm}
 
-Лучший теоретик: Игорь Ходунов. 
+\begin{center}
+  \textbf{Лучший теоретик:}
+\end{center}
+
+\begin{figure}[h]
+  \centering
+  \subfloat[Игорь Ходунов]{\includegraphics[height=6cm]{/faces/best_th/ikhodunov}}
+\end{figure}
+
 
 \subsection{Факультативы.}
 \label{sec:elective}
 
 \begin{figure}[h]
   \centering
-  \subfloat[Р.С. Колеватов рассказывает про эксперименты в физике частиц.]{\includegraphics{/events/fak_1.jpg}}
-  \hspace{0.2cm}
-  \subfloat[Вечерний факультатив по истории.]{\includegraphics[height=6.25cm]{/events/fak_2.jpg}}
+  \subfloat[Р.С.\,Колеватов рассказывает про эксперименты в физике частиц.]{\includegraphics[height=6.2cm]{/events/fak_1}}
+  \hspace{0.05\textwidth}
+  \subfloat[Вечерний факультатив по истории.]{\includegraphics[height=6.2cm]{/events/fak_2}}
 \end{figure}
 
 Каждый рабочий день в ЛФШ проводились факультативы, или
@@ -589,9 +614,10 @@
 
 \begin{figure}[h]
   \centering
-  \subfloat[Физбой 10 класса: финал.]{\includegraphics{/events/fb10_1.jpg}}
-  \hspace{1cm}
-  \subfloat[Физбой 8 класса.]{\includegraphics{/events/fb08_1.jpg}}
+  \subfloat[Физбой 10 класса:
+  финал.]{\includegraphics[width=0.45\textwidth]{/events/fb10_1}}
+  \hspace{0.05\textwidth}
+  \subfloat[Физбой 8 класса.]{\includegraphics[width=0.45\textwidth]{/events/fb08_1}}
 \end{figure}
 
 Задачи для физбоёв подбирались в основном из сборников задач повышенной
@@ -729,13 +755,13 @@
 
 \begin{figure}[h]
   \centering
-  \subfloat{\includegraphics{/events/di11_1.jpg}}
-  \hspace{1cm}
-  \subfloat{\includegraphics{/events/di11_3.jpg}}
-  \hspace{1cm}
-  \subfloat{\includegraphics{/events/di11_2.jpg}}
-  \hspace{1cm}
-  \subfloat{\includegraphics{/events/di09_1.jpg}}
+  \subfloat{\includegraphics[width=0.45\textwidth]{/events/di11_1}}
+  \hspace{0.05\textwidth}
+  \subfloat{\includegraphics[width=0.45\textwidth]{/events/di11_3}}
+  \hspace{0.05\textwidth}
+  \subfloat{\includegraphics[width=0.45\textwidth]{/events/di11_2}}
+  \hspace{0.05\textwidth}
+  \subfloat{\includegraphics[width=0.45\textwidth]{/events/di09_1}}
 \end{figure}
 
 \subsection{<<День Экспериментатора>>.}
