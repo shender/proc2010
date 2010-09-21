@@ -29,10 +29,12 @@
 % геометрия макета
 \usepackage[margin=2cm]{geometry}
 
+
+% счётчик задач
 \newcounter{notask}
 \setcounter{notask}{1}
 
-%Task without picture
+% условие без картинки
 \newcommand{\task}[1]{
   \hrule
   \hbox to \textwidth {%
@@ -53,7 +55,7 @@
 \newlength{\x}
 \newsavebox{\pictbox}
 
-%Task with picture
+% условие с картинкой (картинка выравнивается по центру)
 \newcommand{\taskpic}[2]{
   \savebox{\taskbox}{\parbox[t]{0.93\textwidth-4.3cm}{\smallskip #1 \smallskip}}
   \savebox{\pictbox}{\parbox[t]{4cm}{\smallskip \centering
@@ -76,24 +78,34 @@
 }
 
 \newcommand{\com}[1]{{\Large{\texttt{{\color{red}(#1)}}}}}
+% русские единицы измерения в формулах
 \newcommand{\unit}[1]{\text{ #1}}
 \newcommand{\eps}{\varepsilon}
+% не писать номер рисунка в маленьких картинках
 \renewcommand{\thesubfigure}{\relax}
 
-% settings for tikz
+% настройки для tikz
 % interface = лохматый отрезок
 % spring = пружинка
 % >=latex --- тип стрелочки
-\tikzset{>=latex,interface/.style={postaction={draw,decorate,decoration={border,angle=45,amplitude=0.2cm,segment length=1.4323mm}}},spring/.style={decorate,decoration={snake,amplitude=1mm, segment length=2mm},thick}}
+\tikzset{>=latex,%
+  interface/.style={postaction={draw,decorate,decoration={border,angle=45,amplitude=0.2cm,segment
+        length=1.4323mm}}},%
+  spring/.style={decorate,decoration={snake,amplitude=1mm, segment length=2mm},thick}}
 
 \pagestyle{empty}
-\graphicspath{{./photos/}}
+
+% папка с фотографиями
+\graphicspath{{./photos}}
 
 \begin{document}
 \parindent=5mm
 \righthyphenmin=2
 \begin{center}
-  \small{\textsf{Индивидуальный предприниматель Бухалкин Апанас представляет}}
+  \small{\textsf{СПб Академический университет ---
+      Научно--образовательный центр нанотехнологий РАН\\
+    Фонд некоммерческих программ <<Династия>>\\
+  Совет молодых учёных при президиуме РАН}}
 
 \vfill
 \LARGE{\textsc{XVI Летняя Физическая Школа}}\\
@@ -141,11 +153,11 @@
 
 \begin{figure}[h]
   \centering
-  \subfloat[Параллель 8 и 9 класса.]{\includegraphics[width=0.45\textwidth]{faces/group/89}}
+  \subfloat[Параллель 8 и 9 класса.]{\includegraphics[width=0.45\textwidth]{/faces/group/89}}
   \hspace{0.05\textwidth}
   \subfloat[Параллель 10
-  класса.]{\includegraphics[width=0.45\textwidth]{faces/group/10}}\\
-  \subfloat[Параллель 11 класса.]{\includegraphics[width=0.45\textwidth]{faces/group/11}}
+  класса.]{\includegraphics[width=0.45\textwidth]{/faces/group/10}}\\
+  \subfloat[Параллель 11 класса.]{\includegraphics[width=0.45\textwidth]{/faces/group/11}}
 \end{figure}
 
 
@@ -449,7 +461,7 @@
 \input{./11/daily/problems/problems_4}
 \setcounter{notask}{1}
 \parindent=5mm
-
+\newpage
 \subsubsection{Экспериментальные работы.}
 \label{sec:daily_11_exp}
 
@@ -657,6 +669,7 @@
   участвовали все преподаватели.
 \end{enumerate}
 
+\newpage
 \subsection{Физические бои.}
 \label{sec:battles}
 
